@@ -1,0 +1,22 @@
+<div class="nav-bar">
+    <div class="left-menu">
+      <a routerLink="/">Home</a>
+    </div>
+    <div class="right-menu">
+      <div class="item wish-list">
+        <a routerLink="/wish-list">
+          <span class="fa fa-heart"></span>
+          <span>{{wishList.length}} Items</span>
+        </a>
+      </div>
+      <div class="item cart">
+        <a routerLink="/cart">
+          <span class="fa fa-shopping-cart"></span>
+          <div class="cart-info">
+            <div class="quantity"><span>{{cartList.length}}</span></div>
+            <div class="amount"><span>{{amount}}</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+</div>

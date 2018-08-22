@@ -1,0 +1,21 @@
+<div class="wish-item">
+    <div class="body">
+        <div class="image">
+            <img [src]="product.img" alt="">
+        </div>
+        <div class="description">
+            <div class="name">{{product.name}}</div>
+            <div class="price">
+                <span>{{product.price}}</span>
+                <span> {{getCurrency()}}</span>
+            </div>
+        </div>
+        <div class="date-added">
+            
+        </div>
+    </div>
+    <div class="action">
+        <!-- <button type="button" class="btn btn-info" (click)="hanldeAdd()">Add cart</button>
+        <button type="button" class="btn btn-info" (click)="hanldeLike()">Add wish list</button> -->
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.nav-bar {
+    .left-menu {
+        display: inline-block;
+    }
+    .right-menu {
+        float: right;
+        .item {
+            display: inline-block;
+            .cart-info {
+                display: inline-block;
+            }
+        }
+    }
+    a {
+        padding: 10px 20px;
+    }
+}
