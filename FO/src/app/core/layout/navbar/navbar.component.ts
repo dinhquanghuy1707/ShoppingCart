@@ -20,7 +20,7 @@ export class NavbarComponent {
 
   ngOnInit() {
     this.cartService.getItems().subscribe(data => {
-      this.amount = data.map(item => item.price).reduce((prev, next) => prev + next, 0);
+      this.amount = data.map(item => item.total).reduce((prev, next) => prev + next, 0);
       this.cartList = data;
     });
 

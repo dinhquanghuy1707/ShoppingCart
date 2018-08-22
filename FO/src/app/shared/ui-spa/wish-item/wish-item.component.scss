@@ -1,3 +1,12 @@
 .wish-item {
     padding: 20px;
+    .body{
+        display: flex;
+        .image{
+           >img{
+               width: 100px;
+               height: 150px;
+           } 
+        }
+    }
 }

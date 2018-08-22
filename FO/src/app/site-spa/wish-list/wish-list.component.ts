@@ -15,4 +15,9 @@ export class WishListComponent {
     this.wishListService.getWishList().subscribe(
       data => this.wishList = data);
   }
+
+  product: Product;
+  showModal(product: Product) {
+    this.product = product;
+  }
 }

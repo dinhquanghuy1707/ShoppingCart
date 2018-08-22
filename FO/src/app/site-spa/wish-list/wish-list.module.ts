@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { WishItemModule } from '../../shared/ui-spa'
+import {
+    WishItemModule,
+    CartPopupModule
+} from '../../shared/ui-spa';
 
 import { WishListComponent } from './wish-list.component';
 import { WishListRoutes } from './wish-list.routing';
@@ -12,7 +15,8 @@ import { WishListRoutes } from './wish-list.routing';
         CommonModule,
         RouterModule.forChild(WishListRoutes),
         FormsModule,
-        WishItemModule
+        WishItemModule,
+        CartPopupModule
     ],
     declarations: [WishListComponent]
 })

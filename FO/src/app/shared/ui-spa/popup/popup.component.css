@@ -1,0 +1,39 @@
+.modal-header {
+    height: 55px;
+    background-color: #7fc31b;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 0.5;
+    color: #ffffff;
+}
+
+.modal-header button.close {
+    font-size: 27px;
+    font-style: normal;
+    line-height: 0.5;
+    color: #ffffff;
+}
+
+.modal-footer {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    border-top: solid 1px #d7d7d8;
+}
+
+.active {
+  background-color: #f2f9e7;
+}
+
+.modal-content .modal-body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.modal-content .modal-header, .modal-content .modal-footer{
+    padding-left: 30px;
+    padding-right: 30px;
+}

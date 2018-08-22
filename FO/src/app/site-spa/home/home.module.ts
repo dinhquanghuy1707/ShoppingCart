@@ -5,7 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
 import { HomeRoutes } from './home.routing';
-import { ItemModule } from '../../shared/ui-spa/item';
+import { 
+    ItemModule,
+    CartPopupModule
+} from '../../shared/ui-spa';
 
 @NgModule({
     imports: [
@@ -13,7 +16,8 @@ import { ItemModule } from '../../shared/ui-spa/item';
         RouterModule.forChild(HomeRoutes),
         FormsModule,
 
-        ItemModule
+        ItemModule,
+        CartPopupModule
     ],
     declarations: [HomeComponent]
 })

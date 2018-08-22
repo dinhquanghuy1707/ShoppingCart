@@ -1,22 +1,33 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Product } from '../models';
+import { CartItem } from '../models';
 
 
 @Injectable()
 export class WishListService {
-    private itemsInWishListSubject: BehaviorSubject<Product[]> = new BehaviorSubject([]);
-    private itemsInWishList: Product[] = [];
+    private itemsInWishListSubject: BehaviorSubject<CartItem[]> = new BehaviorSubject([]);
+    private itemsInWishList: CartItem[] = [];
 
     constructor() {
         this.itemsInWishListSubject.subscribe(_ => this.itemsInWishList = _);
     }
 
-    addToWishList(item: Product) {
-        this.itemsInWishListSubject.next([...this.itemsInWishList, item]);
+    addToWishList(item: CartItem) {
+        if (this.itemsInWishList.indexOf(item)!=-1){
+            console.log("return");
+        }
+        else {
+            this.itemsInWishListSubject.next([...this.itemsInWishList, item]);
+        }
     }
 
-    getWishList(): Observable<Product[]> {
+    getWishList(): Observable<CartItem[]> {
         return this.itemsInWishListSubject;
+    }
+
+    public removeWishList(item: CartItem) {
+        const currentItems = [...this.itemsInWishList];
+        const itemsWithoutRemoved = currentItems.filter(_ => _.id !== item.id);
+        this.itemsInWishListSubject.next(itemsWithoutRemoved);
     }
 }

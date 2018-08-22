@@ -4,7 +4,10 @@ import {
    CartService,
    WishListService
   } from '../../shared/business/service';
-import { Product } from '../../shared/business/models';
+import { 
+  Product,
+  CartItem
+} from '../../shared/business/models';
 
 @Component({
   selector: 'app-home',
@@ -23,12 +26,13 @@ export class HomeComponent {
     this.listProduct = this.productsService.getProducts();
   }
 
-  addToCart(product: Product) {
-    this.cartService.addToCart(product);
+  product: Product;
+  showModal(product: Product) {
+    this.product=product;
   }
 
-  addToWishList(item: Product) {
-    item.addDate = new Date();
+  addToWishList(item: CartItem) {
+    item.dateAdded = new Date();
     this.wishListService.addToWishList(item);
   }
 }
