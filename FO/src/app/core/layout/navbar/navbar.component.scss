@@ -1,18 +1,27 @@
-.nav-bar {
-    padding: 15px 15px;
-    .left-menu {
-        display: inline-block;
+.navbar-brand{
+    padding: 20px 15px;
+}
+.navbar-right {
+  span.fa {
+    position: relative;
+    &.fa-heart{
+        font-size: 25px;
     }
-    .right-menu {
-        float: right;
-        .item {
-            display: inline-block;
-            .cart-info {
-                display: inline-block;
-            }
-        }
+    &.fa-shopping-cart{
+        font-size: 27px;        
     }
-    a {
-        padding: 10px 20px;
-    }
+  }
+  span.number {
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: #f5a623;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -12px;
+  }
+  .currency{
+      margin-left: 10px;
+  }
 }

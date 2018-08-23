@@ -1,0 +1,40 @@
+.body {
+  .image>img {
+    width: 150px;
+    height: 200px;
+  }
+  .name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+    margin-top: 10px;
+  }
+  .quantity {
+    .title {
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .input {
+      position: relative;
+      input {
+        width: 35px;
+        text-align: center;
+      }
+      button {
+        position: absolute;
+        padding: .5px 10px;
+        left: 40px;
+        &.fa-angle-up {
+          top: -10px
+        }
+        &.fa-angle-down {
+          top: 10px
+        }
+      }
+    }
+    &.total {
+      margin-top: 10px;
+    }
+  }
+}

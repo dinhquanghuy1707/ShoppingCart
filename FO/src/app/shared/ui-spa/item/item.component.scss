@@ -1,12 +1,63 @@
 .product-item {
-    padding: 20px;
-    text-align: center;
-    .body{
-        .image{
-           >img{
-               width: 100px;
-               height: 150px;
-           } 
-        }
+  padding: 20px;
+  text-align: center;
+  .body {
+    .image {
+      position: relative;
+      padding: 10px;
+      >img {
+        width: 120px;
+        height: 150px;
+      }
+      button {
+        border-radius: 10px;
+      }
     }
+    .name {
+      font-size: 14px;
+      font-weight: bold;
+      color: #777;
+      margin-top: 10px;
+    }
+    .price {
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    .quantity {
+      .title {
+        font-size: 13px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .input {
+        position: relative;
+        input {
+          width: 35px;
+          text-align: center;
+        }
+        button {
+          position: absolute;
+          padding: .5px 10px;
+          left: 40px;
+          &.fa-angle-up {
+            top: -10px
+          }
+          &.fa-angle-down {
+            top: 10px
+          }
+        }
+      }
+      &.total {
+        margin-top: 10px;
+      }
+    }
+  }
+  .action {
+    button {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
 }

@@ -13,7 +13,7 @@ export class CartService {
     }
 
     addToCart(item: CartItem) {
-        let objIndex = this.itemsInCart.indexOf(item);
+        let objIndex = this.itemsInCart.findIndex(_ => _.id === item.id);
         if (objIndex != -1) {
             this.itemsInCart[objIndex] = item;
             this.itemsInCartSubject.next([...this.itemsInCart]);

@@ -7,7 +7,7 @@ declare var $: any;
 @Component({
     selector: 'app-cart-popup',
     templateUrl: 'cart-popup.component.html',
-    styleUrls: ['./cart-popup.component.css']
+    styleUrls: ['./cart-popup.component.scss']
 })
 
 export class CartPopupComponent {

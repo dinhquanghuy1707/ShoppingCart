@@ -25,7 +25,7 @@ export class CommonService {
         if (isRequired == true && phone.length == 0)
             return false;
 
-        var re = /(09|01[2|6|8|9])+([0-9]{8})\b/;
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
         return re.test(phone);
     }
 

@@ -1,4 +1,6 @@
-<h1>CARTS</h1>
+<div class="panel panel-info" *ngIf="listProduct.length<1">
+    <div class="panel-heading text-center">Your cart is empty</div>
+</div>
 
 <app-popup #userInfo modalTitle="User information">
     <div body>
@@ -6,7 +8,7 @@
             <div class="col-md-5">First name</div>
             <div class="col-md-7">
                 <input type="text" maxlength="50" [(ngModel)]="user.firstName">
-                <span class="text-danger" *ngIf="submited && !user.firstName">First Name is required.</span>                
+                <span class="text-danger" *ngIf="submited && !user.firstName">First Name is required.</span>
             </div>
         </div>
         <div class="row">
@@ -51,23 +53,36 @@
     </div>
 </app-popup>
 
-<div class="col-md-12 item" *ngFor="let item of listProduct">
-    <app-item
-        [isCartItem]="true"
-        [product]="item"
-        (onLike)="handleLike($event)"
-        (onDelete)="handleDelete($event)"
-        (onIncrease)="handleIncrease($event)"
-        (onDecrease)="handleDecrease($event)"
-        >
-    </app-item>
+<div class="col-md-12" *ngIf="listProduct.length>=1">
+    <div class="panel panel-info">
+        <div class="panel-heading text-center">
+            <h4>Your Cart</h4>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4 item" *ngFor="let item of listProduct">
+                <app-item [isCartItem]="true" [product]="item" 
+                    (onLike)="handleLike($event)" (onDelete)="handleDelete($event)" 
+                    (onIncrease)="handleIncrease($event)"
+                    (onDecrease)="handleDecrease($event)">
+                </app-item>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="col-md-12 text-center" *ngIf="listProduct.length > 0">
-    <button class="btn btn-success" (click)="showUserModal()">Order</button>
+    <button class="btn btn-success" (click)="showUserModal()">Click To Order</button>
 </div>
 
 <div class="col-md-12" *ngIf="orderInfo">
-    <h1>Your Order Detail</h1>
-     {{orderInfo|json}}
+        <div class="panel panel-info">
+            <div class="panel-heading text-center">
+                <h4>Your Cart</h4>
+            </div>
+        </div>
+    <div class="panel panel-default">
+        <div class="panel-body">{{orderInfo|json}}</div>
+    </div>
 </div>

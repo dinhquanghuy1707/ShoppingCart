@@ -19,7 +19,6 @@ export class WishListService {
         else {
             this.itemsInWishListSubject.next([...this.itemsInWishList, item]);
         }
-        alert("Item successfully added to your wish list.");
     }
 
     getWishList(): Observable<CartItem[]> {

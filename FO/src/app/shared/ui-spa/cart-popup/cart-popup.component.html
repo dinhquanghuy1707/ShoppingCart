@@ -1,24 +1,24 @@
 <app-popup #appPopup (onClose)="dismissModal()">
-  <div body *ngIf="product" class="text-center">
+  <div body *ngIf="product" class="body text-center">
     <div class="image">
       <img [src]=product.img>
     </div>
     <div>
-      <div>{{product.name}}</div>
-      <div>
-        <span>Quantity</span>
-        <div class="input">
+      <div class="name">{{product.name}}</div>
+      <div class="quantity">
+        <span class="title">Quantity</span>
+        <span class="input">
           <input [(ngModel)]="quantity" disabled>
-          <button class="fa fa-angle-up" (click)="handleIncrease()"></button>
-          <button class="fa fa-angle-down" (click)="handleDecrease()"></button>
-        </div>
+          <button class="btn fa fa-angle-up" (click)="handleIncrease()"></button>
+          <button class="btn fa fa-angle-down" (click)="handleDecrease()"></button>
+        </span>
       </div>
-      <div>ToTal: {{quantity*product.price}}</div>
+      <div class="quantity total"><span class="title">Total:</span>{{quantity*product.price}} USD</div>
     </div>
   </div>
   <div footer>
-    <button class="btn btn-success" (click)="handleAdd()">
-      <span class="fa fa-shopping-cart"></span> Add To Card
+    <button class="btn btn-warning" (click)="handleAdd()">
+      <span class="fa fa-shopping-cart"></span> Add To Cart
     </button>
   </div>
 </app-popup>

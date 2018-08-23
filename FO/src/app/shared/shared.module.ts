@@ -37,7 +37,8 @@ import {
         FormsModule,
         ReactiveFormsModule,
 
-        ItemModule
+        ItemModule,
+        DateTimeModule
     ]
 })
 

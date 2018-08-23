@@ -1,8 +1,11 @@
-<h1>WISH LIST</h1>
+<div class="panel panel-info">
+    <div class="panel-heading text-center" *ngIf="wishList.length<1">Your wish list is empty</div>
+    <div class="panel-heading text-center" *ngIf="wishList.length>=1"><h4>Your wish list</h4></div>
+</div>
 <app-cart-popup #modal
     [product]="product">
 </app-cart-popup>  
-<div class="col-md-12 item" *ngFor="let item of wishList">
+<div class="col-md-4 item" *ngFor="let item of wishList">
     <app-item
         [isWishListItem]="true"
         [product]="item"

@@ -1,3 +1,10 @@
+.panel{
+    .item{
+        display: inline-block;
+        text-align: center;
+        border: 1px solid #dddd;
+    }
+}
 div {
     &[body] {
         input,

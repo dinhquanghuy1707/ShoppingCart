@@ -17,7 +17,7 @@ export class DateTimePipe implements PipeTransform {
             case (seconds < 60 * 60 * 2): return " 1 hour before";
             case (seconds < 60 * 60 * 24): return Math.floor(seconds / (60 * 60)) + " hours before";
             default: {
-                return moment(date);
+                return "Added " + moment(date).format("LL");
             }
         }
     }

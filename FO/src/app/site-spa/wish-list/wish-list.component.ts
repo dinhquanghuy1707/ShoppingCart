@@ -7,7 +7,8 @@ import { Product } from '../../shared/business/models';
 
 @Component({
   selector: 'app-wish-list',
-  templateUrl: './wish-list.component.html'
+  templateUrl: './wish-list.component.html',
+  styleUrls:['./wish-list.component.scss']
 })
 export class WishListComponent {
   wishList: Product[];
