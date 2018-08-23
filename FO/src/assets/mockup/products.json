@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Blue item",
+        "price": 123.09,
+        "img": "../../../../assets/img/iphone.png",
+        "description": "Blue"
+    },
+    {
+        "id": 1,
+        "name": "Blue item",
+        "price": 123.09,
+        "img": "../../../../assets/img/iphone.png",
+        "description": "Blue"
+    },
+    {
+        "id": 1,
+        "name": "Blue item",
+        "price": 123.09,
+        "img": "../../../../assets/img/iphone.png",
+        "description": "Blue"
+    },
+    {
+        "id": 1,
+        "name": "Blue item",
+        "price": 123.09,
+        "img": "../../../../assets/img/iphone.png",
+        "description": "Blue"
+    }
+]

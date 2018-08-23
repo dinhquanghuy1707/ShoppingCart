@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { WishListService } from '../../shared/business/service';
+import {
+  WishListService,
+  CartService
+} from '../../shared/business/service';
 import { Product } from '../../shared/business/models';
 
 @Component({
@@ -8,8 +11,10 @@ import { Product } from '../../shared/business/models';
 })
 export class WishListComponent {
   wishList: Product[];
-  constructor(private wishListService: WishListService) {
-  }
+  constructor(
+    private wishListService: WishListService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
     this.wishListService.getWishList().subscribe(
@@ -19,5 +24,9 @@ export class WishListComponent {
   product: Product;
   showModal(product: Product) {
     this.product = product;
+  }
+
+  handleDelete(product: Product) {
+    this.wishListService.removeWishList(product);
   }
 }

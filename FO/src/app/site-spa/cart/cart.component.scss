@@ -1,0 +1,11 @@
+div {
+    &[body] {
+        input,
+        textarea {
+            width: -webkit-fill-available;
+        }
+    }
+    .row:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}

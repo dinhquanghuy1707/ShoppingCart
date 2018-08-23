@@ -4,6 +4,4 @@ export class Product {
     price: number;
     img?: string;
     description?: string;
-    dateAdded?: Date;
-    quantity?: number;
 }

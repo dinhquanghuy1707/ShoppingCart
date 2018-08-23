@@ -1,17 +1,35 @@
 <div class="product-item">
     <div class="body">
-        <div class="image">
-            <img [src]="product.img" alt="">
-        </div>
+        <div>
+            <div class="image">
+                <img [src]="product.img" alt="">
+            </div>
 
-        <div class="name">{{product.name}}</div>
-        <div class="price">
-            <span>{{product.price}}</span>
-            <span> {{getCurrency()}}</span>
+            <div class="name">{{product.name}}</div>
+            <div class="price">
+                <span>{{product.price}}</span>
+                <span> {{getCurrency()}}</span>
+            </div>
+        </div>
+        <div>
+            <div class="date-added" *ngIf="isWishListItem">
+                <span>{{product.dateAdded | dateTime}}</span>
+            </div>
+            <div *ngIf="isCartItem">
+                <span>Quantity</span>
+                <div class="input">
+                    <input [(ngModel)]="product.quantity" disabled>
+                    <button class="fa fa-angle-up" (click)="handleIncrease()"></button>
+                    <button class="fa fa-angle-down" (click)="handleDecrease()"></button>
+                </div>
+                <div>ToTal: {{product.quantity*product.price}}</div>
+            </div>
         </div>
     </div>
     <div class="action">
-        <button type="button" class="btn btn-info" (click)="hanldeAdd()">Add cart</button>
-        <button type="button" class="btn btn-info" (click)="hanldeLike()">Add wish list</button>
+        <button type="button" class="btn btn-info fa fa-shopping-cart" (click)="hanldeAdd()" *ngIf="!isCartItem"></button>
+        <button type="button" class="btn btn-info fa fa-heart" (click)="hanldeLike()" *ngIf="!isCartItem && !isWishListItem">
+        </button>
+        <button type="button" class="btn btn-danger fa fa-remove" (click)="hanldeRemove()" *ngIf="isCartItem || isWishListItem"></button>
     </div>
 </div>

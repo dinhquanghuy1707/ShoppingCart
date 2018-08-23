@@ -1,10 +1,12 @@
-<h1>wish-list</h1>
+<h1>WISH LIST</h1>
 <app-cart-popup #modal
     [product]="product">
 </app-cart-popup>  
 <div class="col-md-12 item" *ngFor="let item of wishList">
-    <app-wish-item
+    <app-item
+        [isWishListItem]="true"
         [product]="item"
-        (onAdd)="showModal($event); modal.showModal();">
-    </app-wish-item>
+        (onAdd)="showModal($event); modal.showModal();"
+        (onDelete)="handleDelete($event)">
+    </app-item>
 </div>

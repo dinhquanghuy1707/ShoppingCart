@@ -14,11 +14,12 @@ export class WishListService {
 
     addToWishList(item: CartItem) {
         if (this.itemsInWishList.indexOf(item)!=-1){
-            console.log("return");
+            return;
         }
         else {
             this.itemsInWishListSubject.next([...this.itemsInWishList, item]);
         }
+        alert("Item successfully added to your wish list.");
     }
 
     getWishList(): Observable<CartItem[]> {

@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Product } from '../../business/models'
+import { CartItem } from '../../business/models'
 
 @Component({
   selector: 'app-item',
@@ -8,13 +8,22 @@ import { Product } from '../../business/models'
 })
 export class ItemComponent {
 
-  @Input() product: Product;
+  @Input() product: CartItem;
+  @Input() isCartItem: boolean = false;
+  @Input() isWishListItem: boolean = false;
 
   @Output() onAdd: EventEmitter<any> = new EventEmitter<any>();
   @Output() onLike: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onIncrease: EventEmitter<any> = new EventEmitter<any>();
+  @Output() onDecrease: EventEmitter<any> = new EventEmitter<any>();
+  // quantity: number;
 
+  ngOnInit() {
+    // this.product.quantity ? this.product.quantity : 1;
+  }
   public getCurrency(): string {
-    return 'usd';
+    return 'USD';
   }
 
   hanldeAdd() {
@@ -23,5 +32,23 @@ export class ItemComponent {
 
   hanldeLike() {
     this.onLike.emit(this.product);
+  }
+
+  hanldeRemove() {
+    this.onDelete.emit(this.product);
+  }
+
+  handleIncrease() {
+    this.product.quantity++;
+    this.product.total = this.product.price * this.product.quantity;
+    this.onIncrease.emit(this.product);
+  }
+
+  handleDecrease() {
+    if (this.product.quantity > 1) {
+      this.product.quantity--;
+      this.product.total = this.product.price * this.product.quantity;
+    }
+    this.onDecrease.emit(this.product);
   }
 }

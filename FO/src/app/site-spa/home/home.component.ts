@@ -23,7 +23,10 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.listProduct = this.productsService.getProducts();
+    this.productsService.getProducts().subscribe(
+      data=> this.listProduct = data
+    );
+    // this.productsService.getJSON().subscribe(data=>console.log(data));
   }
 
   product: Product;

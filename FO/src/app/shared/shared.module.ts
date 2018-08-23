@@ -1,30 +1,15 @@
-import {
-    NgModule
-} from '@angular/core';
-
-import {
-    CommonModule
-} from '@angular/common';
-
-import {
-    FormsModule,
-    ReactiveFormsModule
-} from '@angular/forms';
-
-import {
-    RouterModule
-} from '@angular/router';
-
-
-
-import {
-    ItemModule
-} from './ui-spa';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ItemModule } from './ui-spa';
+import { DateTimeModule } from './business/date-time';
 import {
     CartService,
     ProductsService,
-    WishListService
-} from './business/service'
+    WishListService,
+    CommonService
+} from './business/service';
 
 @NgModule({
     imports: [
@@ -34,12 +19,14 @@ import {
         FormsModule,
         ReactiveFormsModule,
 
-        ItemModule
+        ItemModule,
+        DateTimeModule
     ],
     providers: [
         CartService,
         ProductsService,
-        WishListService
+        WishListService,
+        CommonService
     ],
     declarations: [
     ],

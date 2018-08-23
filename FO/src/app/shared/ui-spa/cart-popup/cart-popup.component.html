@@ -1,5 +1,5 @@
 <app-popup #appPopup (onClose)="dismissModal()">
-  <div body *ngIf="product">
+  <div body *ngIf="product" class="text-center">
     <div class="image">
       <img [src]=product.img>
     </div>
@@ -15,6 +15,8 @@
       </div>
       <div>ToTal: {{quantity*product.price}}</div>
     </div>
+  </div>
+  <div footer>
     <button class="btn btn-success" (click)="handleAdd()">
       <span class="fa fa-shopping-cart"></span> Add To Card
     </button>

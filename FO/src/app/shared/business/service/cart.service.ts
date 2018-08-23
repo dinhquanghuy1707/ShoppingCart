@@ -13,8 +13,14 @@ export class CartService {
     }
 
     addToCart(item: CartItem) {
-        this.itemsInCartSubject.next([...this.itemsInCart, item]);
-        this.getItems().subscribe(data => console.log(data));
+        let objIndex = this.itemsInCart.indexOf(item);
+        if (objIndex != -1) {
+            this.itemsInCart[objIndex] = item;
+            this.itemsInCartSubject.next([...this.itemsInCart]);
+        }
+        else {
+            this.itemsInCartSubject.next([...this.itemsInCart, item]);
+        }
     }
 
     getItems(): Observable<CartItem[]> {

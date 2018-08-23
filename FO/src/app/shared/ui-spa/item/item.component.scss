@@ -1,6 +1,12 @@
 .product-item {
     padding: 20px;
-    .body {
-        text-align: center;
+    text-align: center;
+    .body{
+        .image{
+           >img{
+               width: 100px;
+               height: 150px;
+           } 
+        }
     }
 }

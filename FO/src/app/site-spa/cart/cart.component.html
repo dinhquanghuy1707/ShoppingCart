@@ -1,1 +1,73 @@
 <h1>CARTS</h1>
+
+<app-popup #userInfo modalTitle="User information">
+    <div body>
+        <div class="row">
+            <div class="col-md-5">First name</div>
+            <div class="col-md-7">
+                <input type="text" maxlength="50" [(ngModel)]="user.firstName">
+                <span class="text-danger" *ngIf="submited && !user.firstName">First Name is required.</span>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">Last name</div>
+            <div class="col-md-7">
+                <input type="text" maxlength="50" [(ngModel)]="user.lastName">
+                <span class="text-danger" *ngIf="submited && !user.lastName">Last Name is required.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">Email</div>
+            <div class="col-md-7">
+                <input type="email" maxlength="50" [(ngModel)]="user.email">
+                <span class="text-danger" *ngIf="submited && !user.email">Email is required.</span>
+                <span class="text-danger" *ngIf="submited && user.email && !validationService.validateEmail(user.email, true)">Email is invalid.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">Phone</div>
+            <div class="col-md-7">
+                <input type="text" [(ngModel)]="user.phone">
+                <span class="text-danger" *ngIf="submited && !user.phone">Phone is required.</span>
+                <span class="text-danger" *ngIf="submited && user.phone && !validationService.validatePhone(user.phone, true)">Phone is invalid.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">Address</div>
+            <div class="col-md-7">
+                <input type="text" [(ngModel)]="user.address">
+                <span class="text-danger" *ngIf="submited && !user.address">Address is required.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">Notes</div>
+            <div class="col-md-7">
+                <textarea [(ngModel)]="user.notes"></textarea>
+            </div>
+        </div>
+    </div>
+    <div footer>
+        <button class="btn btn-success" (click)="hanldeUserComfirm()">Confirm</button>
+    </div>
+</app-popup>
+
+<div class="col-md-12 item" *ngFor="let item of listProduct">
+    <app-item
+        [isCartItem]="true"
+        [product]="item"
+        (onLike)="handleLike($event)"
+        (onDelete)="handleDelete($event)"
+        (onIncrease)="handleIncrease($event)"
+        (onDecrease)="handleDecrease($event)"
+        >
+    </app-item>
+</div>
+
+<div class="col-md-12 text-center" *ngIf="listProduct.length > 0">
+    <button class="btn btn-success" (click)="showUserModal()">Order</button>
+</div>
+
+<div class="col-md-12" *ngIf="orderInfo">
+    <h1>Your Order Detail</h1>
+     {{orderInfo|json}}
+</div>
