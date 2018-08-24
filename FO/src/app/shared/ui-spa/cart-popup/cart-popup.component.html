@@ -1,4 +1,4 @@
-<app-popup #appPopup (onClose)="dismissModal()">
+<app-popup #appPopup modalTitle="Add To Cart" (onClose)="dismissModal()">
   <div body *ngIf="product" class="body text-center">
     <div class="image">
       <img [src]=product.img>
